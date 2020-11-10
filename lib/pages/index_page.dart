@@ -4,7 +4,7 @@ import 'home_page.dart';
 import 'category_page.dart';
 import 'cart_page.dart';
 import 'member_page.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IndexPage extends StatefulWidget {
   @override
@@ -50,6 +50,7 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, designSize: Size(750, 1334), allowFontScaling: true);
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 255, 245, 1.0),
       body: currentPage,
