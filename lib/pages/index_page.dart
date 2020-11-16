@@ -32,7 +32,7 @@ class _IndexPageState extends State<IndexPage> {
     ),
   ];
 
-  final List tabBodies = [
+  final List<Widget> tabBodies = [
     HomePage(),
     CategoryPage(),
     CartPage(),
@@ -53,7 +53,10 @@ class _IndexPageState extends State<IndexPage> {
     ScreenUtil.init(context, designSize: Size(750, 1334), allowFontScaling: true);
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 255, 245, 1.0),
-      body: currentPage,
+      body: IndexedStack(
+        index: currentIndex,
+        children: tabBodies,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
