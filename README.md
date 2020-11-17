@@ -20,3 +20,6 @@ samples, guidance on mobile development, and a full API reference.
 #flutter官方插件-打开网页/拨打电话[url_launcher]：https://github.com/flutter/plugins/tree/master/packages/url_launcher/url_launcher
 
 #上拉加载下拉刷新[flutter_easyrefresh]:https://pub.flutter-io.cn/packages/flutter_easyrefresh
+
+#格式化json[bejson]: http://www.bejson.com/
+#model[json_to_dart转换复杂模型] :https://javiercbk.github.io/json_to_dart/

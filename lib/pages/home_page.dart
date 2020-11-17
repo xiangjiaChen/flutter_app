@@ -86,17 +86,19 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin{
                 ]
               ),
               onLoad:() async{
-                print('开始加载更多');
                 var formData = {'page': page};
                 await request('homePageBelowContent',formData:formData).then((value){
-                  print(value);
                   var data = json.decode(value.toString());
-                  print(data);
-                  List<Map> newGoodList = (data['data'] as List).cast();
-                  setState(() {
-                    hotGoodsList.addAll(newGoodList);
-                    page++;
-                  });
+                  // bugfix: 长度为0不加载
+                  if(data['data'] != null) {
+                    List<Map> newGoodList = (data['data'] as List).cast();
+                    setState(() {
+                      hotGoodsList.addAll(newGoodList);
+                      page++;
+                    });
+                  }else{
+                    print('加载结束');
+                  }
                 });
               }
             );
